@@ -962,7 +962,9 @@
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
             line-height: 1;
+            padding-right: 0.08em;
             margin-bottom: 10px;
         }
 

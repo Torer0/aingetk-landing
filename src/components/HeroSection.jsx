@@ -35,7 +35,7 @@ export default function HeroSection() {
             </div>
             <div className="hero-visual">
                 <div className="hero-card hero-card-1">
-                    <div className="card-stat">+50</div>
+                    <div className="card-stat">+5</div>
                     <div className="card-stat-label">Empresas transformadas</div>
                     <div className="card-chart">
                         <div className="card-chart-bar"></div>
