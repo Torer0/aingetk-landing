@@ -40,8 +40,8 @@ export default function Footer() {
             <div className="footer-links">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="/terminos-de-servicio.html" target="_blank" rel="noopener noreferrer">Terminos de Servicio</a></li>
-                    <li><a href="/politica-de-privacidad.html" target="_blank" rel="noopener noreferrer">Politica de Privacidad</a></li>
+                    <li><a href="/terminos-de-servicio/">Terminos de Servicio</a></li>
+                    <li><a href="/politica-de-privacidad/">Politica de Privacidad</a></li>
                 </ul>
             </div>
         </div>

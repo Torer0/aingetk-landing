@@ -87,7 +87,7 @@ export default function ContactSection() {
                     <label>
                         <input type="checkbox" name="privacy_acceptance" required />
                         <span>
-                            Acepto los <a href="/terminos-de-servicio.html" target="_blank" rel="noopener noreferrer">Terminos de Servicio</a> y la <a href="/politica-de-privacidad.html" target="_blank" rel="noopener noreferrer">Politica de Privacidad</a>.
+                            Acepto los <a href="/terminos-de-servicio/">Terminos de Servicio</a> y la <a href="/politica-de-privacidad/">Politica de Privacidad</a>.
                         </span>
                     </label>
                 </div>

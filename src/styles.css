@@ -1925,6 +1925,30 @@
     font-weight: 700;
 }
 
+.legal-route-hero {
+    grid-template-columns: 1fr;
+}
+
+.legal-route-panel {
+    margin-top: 18px;
+}
+
+.legal-route-block + .legal-route-block {
+    margin-top: 26px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(124, 218, 249, 0.2);
+}
+
+.legal-route-block p {
+    color: var(--gray-light);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.legal-route-block p:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 900px) {
     .service-hero {
         grid-template-columns: 1fr;

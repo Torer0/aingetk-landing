@@ -12,6 +12,7 @@ import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
 import { useLandingSetup } from './hooks/useLandingSetup.js';
 import ServiceRoutePage from './components/ServiceRoutePage.jsx';
+import LegalRoutePage from './components/LegalRoutePage.jsx';
 
 const serviceRoutes = {
   '/estrategia_diagnostico': {
@@ -148,6 +149,96 @@ const serviceRoutes = {
   },
 };
 
+const legalRoutes = {
+  '/terminos-de-servicio': {
+    title: 'Terminos de Servicio',
+    heroTitle: 'Condiciones de uso de AINGETK',
+    heroSubtitle:
+      'Estas condiciones regulan el uso del sitio web y el marco general de contratacion de servicios.',
+    lastUpdated: '27 de febrero de 2026',
+    sections: [
+      {
+        heading: '1. Aceptacion y alcance',
+        paragraphs: [
+          'Al navegar o utilizar este sitio, aceptas estos terminos de servicio. Si no estas de acuerdo con alguna condicion, debes abstenerte de usarlo.',
+          'Estos terminos aplican al uso del sitio web de AINGETK y complementan cualquier acuerdo comercial especifico firmado con clientes.',
+        ],
+      },
+      {
+        heading: '2. Uso permitido del sitio',
+        list: [
+          'No usar el sitio para actividades ilicitas o no autorizadas.',
+          'No intentar acceder sin autorizacion a sistemas, datos o cuentas.',
+          'No copiar, alterar o distribuir contenido sin permiso expreso.',
+        ],
+      },
+      {
+        heading: '3. Propiedad intelectual',
+        paragraphs: [
+          'La marca, diseno, textos y demas contenidos del sitio son propiedad de AINGETK o de sus respectivos titulares.',
+        ],
+      },
+      {
+        heading: '4. Limitacion de responsabilidad',
+        paragraphs: [
+          'AINGETK no garantiza disponibilidad ininterrumpida del sitio. En la medida permitida por ley, no asume responsabilidad por danos derivados del uso del sitio.',
+        ],
+      },
+      {
+        heading: '5. Modificaciones y contacto',
+        paragraphs: [
+          'Podemos actualizar estos terminos en cualquier momento. La version vigente sera la publicada en esta pagina.',
+          'Para consultas legales, escribe a contacto@aingetk.com.',
+        ],
+      },
+    ],
+  },
+  '/politica-de-privacidad': {
+    title: 'Politica de Privacidad',
+    heroTitle: 'Como tratamos tus datos personales',
+    heroSubtitle:
+      'Explicamos que datos recopilamos, con que finalidad y que derechos tienes sobre tu informacion.',
+    lastUpdated: '27 de febrero de 2026',
+    sections: [
+      {
+        heading: '1. Datos que recopilamos',
+        list: [
+          'Nombre, correo, telefono, empresa y mensaje enviados desde formularios.',
+          'Datos tecnicos basicos de navegacion para operacion y seguridad del sitio.',
+        ],
+      },
+      {
+        heading: '2. Finalidades de uso',
+        list: [
+          'Responder consultas y solicitudes comerciales.',
+          'Coordinar reuniones, propuestas y seguimiento de oportunidades.',
+          'Mejorar la calidad del servicio y la experiencia del sitio.',
+        ],
+      },
+      {
+        heading: '3. Base de tratamiento y conservacion',
+        paragraphs: [
+          'Tratamos tus datos con base en tu consentimiento y/o en la necesidad de gestionar una relacion precontractual o contractual.',
+          'Conservamos la informacion durante el tiempo necesario para cumplir dichas finalidades y obligaciones aplicables.',
+        ],
+      },
+      {
+        heading: '4. Comparticion y seguridad',
+        paragraphs: [
+          'No vendemos datos personales. Solo compartimos informacion con proveedores necesarios para operar el servicio bajo obligaciones de confidencialidad.',
+          'Aplicamos medidas razonables de seguridad para proteger tus datos frente a accesos no autorizados.',
+        ],
+      },
+      {
+        heading: '5. Derechos del titular',
+        paragraphs: [
+          'Puedes solicitar acceso, rectificacion o eliminacion de tus datos contactando a contacto@aingetk.com.',
+        ],
+      },
+    ],
+  },
+};
+
 function handleImageError(event) {
   const image = event.currentTarget;
   image.style.display = 'none';
@@ -195,7 +286,12 @@ function normalizePath(pathname) {
 
 export default function App() {
   const currentPath = normalizePath(window.location.pathname);
+  const legalRouteData = legalRoutes[currentPath];
   const routeData = serviceRoutes[currentPath];
+
+  if (legalRouteData) {
+    return <LegalRoutePage routeData={legalRouteData} />;
+  }
 
   if (routeData) {
     return <ServiceRoutePage routeData={routeData} />;
