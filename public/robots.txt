@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Block any internal/draft routes (add more if needed)
+Disallow: /404
+
+# Sitemap location
 Sitemap: https://aingetk.com/sitemap.xml

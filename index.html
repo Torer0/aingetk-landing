@@ -1,86 +1,207 @@
 <!doctype html>
+<!--
+  lang="es" → el mercado principal es Perú/Latinoamérica (hispanohablante).
+  Google usa el atributo lang para determinar relevancia en búsquedas locales.
+-->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="3DwdShfshABxmtOA_74ZhLal4Iq7M7XoFW2fQ2JT4XI" />
-    <title>AINGETK | Transformacion Digital para Empresas en Peru</title>
-    <meta name="description" content="AINGETK es una consultora de transformacion digital en Peru. Disenamos estrategias, sistemas y automatizacion con impacto medible para tu negocio." />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="AINGETK" />
-    <meta name="theme-color" content="#004173" />
-    <link rel="canonical" href="https://aingetk.com/" />
-    <link rel="alternate" href="https://aingetk.com/" hreflang="es-PE" />
-    <link rel="alternate" href="https://aingetk.com/" hreflang="x-default" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+    <!-- ── Título principal — optimizado para búsquedas en español (Perú) ── -->
+    <title>AINGETK | Plataformas de Software Operacional — Lima, Perú</title>
+
+    <!-- ── Meta description en español (Google la muestra en búsquedas peruanas) ── -->
+    <meta
+      name="description"
+      content="AINGETK desarrolla e implementa plataformas de software operacional para empresas en Perú y Latinoamérica. Automatización de procesos, monitoreo de operaciones e inteligencia de datos."
+    />
+
+    <!-- ── Keywords en español e inglés para cubrir ambos mercados ── -->
+    <meta
+      name="keywords"
+      content="software operacional Peru, plataformas industriales Lima, mantenimiento predictivo, monitoreo de flota, sistemas IoT industrial, analítica operacional, transformación digital Peru, AINGETK, operational software Peru, industrial platforms Latin America"
+    />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="AINGETK" />
+    <meta name="theme-color" content="#05070c" />
+    <link rel="canonical" href="https://aingetk.com/" />
+
+    <!-- ── Geo tags — señales clave para Google Search en Perú ── -->
+    <meta name="geo.region" content="PE-LIM" />
+    <meta name="geo.placename" content="Lima, Peru" />
+    <!-- Coordenadas del centro de Lima, Perú -->
+    <meta name="geo.position" content="-12.0464;-77.0428" />
+    <meta name="ICBM" content="-12.0464, -77.0428" />
+
+    <!-- ── hreflang — indica a Google las versiones de idioma/región ── -->
+    <link rel="alternate" hreflang="es-pe" href="https://aingetk.com/" />
+    <link rel="alternate" hreflang="es"    href="https://aingetk.com/" />
+    <link rel="alternate" hreflang="en"    href="https://aingetk.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://aingetk.com/" />
+
+    <!-- ── Open Graph (LinkedIn, Facebook, WhatsApp) ── -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AINGETK" />
+    <!-- Locale principal: español de Perú -->
     <meta property="og:locale" content="es_PE" />
-    <meta property="og:title" content="AINGETK | Transformacion Digital para Empresas en Peru" />
-    <meta property="og:description" content="Consultoria de transformacion digital, automatizacion y sistemas para empresas que buscan resultados medibles." />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="AINGETK | Software Operacional para Empresas — Lima, Perú" />
+    <meta
+      property="og:description"
+      content="Plataformas de software que ayudan a empresas en Perú y Latinoamérica a automatizar procesos, monitorear operaciones y tomar decisiones basadas en datos."
+    />
     <meta property="og:url" content="https://aingetk.com/" />
+    <!--
+      PENDIENTE: crea /public/assets/og-image.png de 1200×630px con el branding de AINGETK.
+      Esta imagen aparece al compartir el enlace en LinkedIn, WhatsApp, Facebook y Twitter.
+      Mientras tanto se usa el logo como fallback.
+    -->
     <meta property="og:image" content="https://aingetk.com/assets/logo.png" />
-    <meta property="og:image:alt" content="Logo de AINGETK" />
+    <meta property="og:image:width" content="63" />
+    <meta property="og:image:height" content="75" />
+    <meta property="og:image:alt" content="AINGETK — Plataformas de Software Operacional" />
 
+    <!-- ── Twitter / X Card ── -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AINGETK | Transformacion Digital para Empresas en Peru" />
-    <meta name="twitter:description" content="Consultoria de transformacion digital, automatizacion y sistemas con foco en impacto de negocio." />
+    <meta name="twitter:site" content="@aingetk" />
+    <meta name="twitter:title" content="AINGETK | Software Operacional — Lima, Perú" />
+    <meta
+      name="twitter:description"
+      content="Plataformas de software para mantenimiento, flotas, analítica e IoT. Construidas para empresas en Perú y Latinoamérica."
+    />
     <meta name="twitter:image" content="https://aingetk.com/assets/logo.png" />
+    <meta name="twitter:image:alt" content="AINGETK — Software Operacional" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- ── Favicons ── -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" sizes="180x180" />
 
+    <!-- ── Structured Data (JSON-LD) ── -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://aingetk.com/#organization",
-          "name": "AINGETK",
-          "url": "https://aingetk.com/",
-          "logo": "https://aingetk.com/assets/logo.png",
-          "email": "contacto@aingetk.com",
-          "telephone": "+51 967 865 811",
-          "sameAs": [
-            "https://wa.me/51967865811"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lima",
-            "addressCountry": "PE"
-          }
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://aingetk.com/#service",
-          "name": "AINGETK",
-          "url": "https://aingetk.com/",
-          "description": "Consultoria de transformacion digital para empresas.",
-          "areaServed": {
-            "@type": "Country",
-            "name": "Peru"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["Organization", "LocalBusiness"],
+            "@id": "https://aingetk.com/#organization",
+            "name": "AINGETK",
+            "alternateName": "AINGETK Software Operacional",
+            "url": "https://aingetk.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://aingetk.com/assets/logo.png",
+              "width": 63,
+              "height": 75
+            },
+            "email": "contacto@aingetk.com",
+            "description": "Empresa de tecnología que diseña e implementa plataformas de software operacional para mejorar la eficiencia, automatización y toma de decisiones en empresas industriales y de servicios en Perú y Latinoamérica.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lima",
+              "addressRegion": "Lima",
+              "addressCountry": "PE",
+              "postalCode": "15001"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -12.0464,
+              "longitude": -77.0428
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Peru",
+                "@id": "https://www.wikidata.org/wiki/Q419"
+              },
+              {
+                "@type": "Country",
+                "name": "Colombia"
+              },
+              {
+                "@type": "Country",
+                "name": "Chile"
+              },
+              {
+                "@type": "Country",
+                "name": "Mexico"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Latin America"
+              }
+            ],
+            "knowsAbout": [
+              "Plataformas de software operacional",
+              "Internet de las Cosas Industrial (IoT)",
+              "Inteligencia Artificial para operaciones",
+              "Sistemas de gestión de mantenimiento",
+              "Monitoreo de flotas y logística",
+              "Analítica operacional",
+              "Infraestructura en la nube"
+            ],
+            "priceRange": "$$",
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "inLanguage": ["es", "en"]
           },
-          "serviceType": [
-            "Estrategia digital",
-            "Automatizacion de procesos",
-            "Implementacion de sistemas y ERP",
-            "Analitica de datos e IA",
-            "Cloud y ciberseguridad"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://aingetk.com/#website",
-          "name": "AINGETK",
-          "url": "https://aingetk.com/",
-          "inLanguage": "es-PE"
-        }
-      ]
-    }
+          {
+            "@type": "WebSite",
+            "@id": "https://aingetk.com/#website",
+            "name": "AINGETK",
+            "url": "https://aingetk.com/",
+            "inLanguage": ["es", "en"],
+            "publisher": {
+              "@id": "https://aingetk.com/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://aingetk.com/?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://aingetk.com/#webpage",
+            "url": "https://aingetk.com/",
+            "name": "AINGETK | Plataformas de Software Operacional — Lima, Perú",
+            "description": "AINGETK desarrolla plataformas de software operacional para empresas en Perú y Latinoamérica. Automatización, monitoreo e inteligencia de datos.",
+            "isPartOf": { "@id": "https://aingetk.com/#website" },
+            "about": { "@id": "https://aingetk.com/#organization" },
+            "inLanguage": "es",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Inicio",
+                  "item": "https://aingetk.com/"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://aingetk.com/#platform",
+            "name": "AINGETK Operational Intelligence Platform",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "areaServed": "PE"
+            },
+            "provider": { "@id": "https://aingetk.com/#organization" },
+            "description": "Plataforma unificada de software operacional que integra dashboards, automatización, analítica con IA, integración IoT e infraestructura de datos para empresas industriales y de servicios."
+          }
+        ]
+      }
     </script>
   </head>
   <body>
