@@ -223,12 +223,12 @@ const CONTENT = {
       teamEyebrow: 'Our Team',
       teamTitle: 'The People Behind AINGETK',
       team: [
-        { name: 'Carlos Mendoza',   role: 'CEO & Co-founder',          bio: 'Industrial engineer with 12+ years in operational systems and enterprise software deployment across Latin America.', img: 'https://picsum.photos/seed/team1/400/400', linkedin: 'https://linkedin.com/in/carlosmendoza', github: 'https://github.com/carlosmendoza' },
-        { name: 'Andrea Ríos',      role: 'CTO',                        bio: 'Software architect specialized in real-time data platforms, IoT integrations and cloud-native infrastructure.', img: 'https://picsum.photos/seed/team2/400/400', linkedin: 'https://linkedin.com/in/andreariospe', github: 'https://github.com/andreariospe' },
-        { name: 'Miguel Torres',    role: 'Head of Product',            bio: 'Product leader with background in operational intelligence and UX for industrial environments.', img: 'https://picsum.photos/seed/team3/400/400', linkedin: 'https://linkedin.com/in/migueltorrespe', github: null },
-        { name: 'Lucía Vargas',     role: 'Head of Engineering',        bio: 'Full-stack engineer leading platform development with expertise in distributed systems and automation.', img: 'https://picsum.photos/seed/team4/400/400', linkedin: 'https://linkedin.com/in/luciavargaspe', github: 'https://github.com/luciavargaspe' },
-        { name: 'Diego Flores',     role: 'Head of Client Success',     bio: 'Operational consultant helping companies across Peru and LatAm maximize platform adoption and ROI.', img: 'https://picsum.photos/seed/team5/400/400', linkedin: 'https://linkedin.com/in/diegaflorespe', github: null },
-        { name: 'Valeria Chávez',   role: 'Lead Data Scientist',        bio: 'Specialist in predictive analytics and machine learning models applied to industrial operations.', img: 'https://picsum.photos/seed/team6/400/400', linkedin: 'https://linkedin.com/in/valeriachavezpe', github: 'https://github.com/valeriachavezpe' },
+        { name: 'Enzo Rivas',   role: 'CEO & Co-founder',          bio: 'Industrial engineer with 12+ years in operational systems and enterprise software deployment across Latin America.', img: 'assets/team/enzo-rivas.jpg', linkedin: 'https://linkedin.com/in/carlosmendoza', github: 'https://github.com/carlosmendoza' },
+        { name: 'Diana Sologuren',      role: 'Directora de Proyectos',                        bio: 'Software architect specialized in real-time data platforms, IoT integrations and cloud-native infrastructure.', img: 'assets/team/diana-sologuren.jpeg', linkedin: 'https://linkedin.com/in/andreariospe', github: 'https://github.com/andreariospe' },
+        { name: 'Diego Pozo',    role: 'Director de Negocios',            bio: 'Product leader with background in operational intelligence and UX for industrial environments.', img: 'assets/team/diego-pozo.jpg', linkedin: 'https://linkedin.com/in/migueltorrespe', github: null },
+        { name: 'Arturo Noriega',     role: 'Director de Tecnología',        bio: 'Full-stack engineer leading platform development with expertise in distributed systems and automation.', img: 'assets/team/arturo-noriega.jpeg', linkedin: 'https://linkedin.com/in/luciavargaspe', github: 'https://github.com/luciavargaspe' },
+        { name: 'Ricardo Bravo',     role: 'Director de Seguridad de la Información',     bio: 'Operational consultant helping companies across Peru and LatAm maximize platform adoption and ROI.', img: 'assets/team/ricardo-bravo.jpeg', linkedin: 'https://linkedin.com/in/diegaflorespe', github: null },
+        
       ],
     },
     contact: {
@@ -446,13 +446,12 @@ const CONTENT = {
       teamEyebrow: 'Nuestro Equipo',
       teamTitle: 'Las Personas Detrás de AINGETK',
       team: [
-        { name: 'Carlos Mendoza',   role: 'CEO & Co-fundador',           bio: 'Ingeniero industrial con más de 12 años en sistemas operacionales y despliegue de software empresarial en Latinoamérica.', img: 'https://picsum.photos/seed/team1/400/400', linkedin: 'https://linkedin.com/in/carlosmendoza', github: 'https://github.com/carlosmendoza' },
-        { name: 'Andrea Ríos',      role: 'CTO',                          bio: 'Arquitecta de software especializada en plataformas de datos en tiempo real, integraciones IoT e infraestructura cloud.', img: 'https://picsum.photos/seed/team2/400/400', linkedin: 'https://linkedin.com/in/andreariospe', github: 'https://github.com/andreariospe' },
-        { name: 'Miguel Torres',    role: 'Head of Product',              bio: 'Líder de producto con experiencia en inteligencia operacional y UX para entornos industriales.', img: 'https://picsum.photos/seed/team3/400/400', linkedin: 'https://linkedin.com/in/migueltorrespe', github: null },
-        { name: 'Lucía Vargas',     role: 'Head of Engineering',          bio: 'Ingeniera full-stack liderando el desarrollo de la plataforma con experiencia en sistemas distribuidos y automatización.', img: 'https://picsum.photos/seed/team4/400/400', linkedin: 'https://linkedin.com/in/luciavargaspe', github: 'https://github.com/luciavargaspe' },
-        { name: 'Diego Flores',     role: 'Head of Client Success',       bio: 'Consultor operacional que ayuda a empresas de Perú y LatAm a maximizar la adopción de la plataforma y el ROI.', img: 'https://picsum.photos/seed/team5/400/400', linkedin: 'https://linkedin.com/in/diegaflorespe', github: null },
-        { name: 'Valeria Chávez',   role: 'Lead Data Scientist',          bio: 'Especialista en analítica predictiva y modelos de machine learning aplicados a operaciones industriales.', img: 'https://picsum.photos/seed/team6/400/400', linkedin: 'https://linkedin.com/in/valeriachavezpe', github: 'https://github.com/valeriachavezpe' },
-      ],
+      { name: 'Enzo Rivas',   role: 'CEO & Co-founder',          bio: 'Industrial engineer with 12+ years in operational systems and enterprise software deployment across Latin America.', img: 'assets/team/enzo-rivas.jpg', linkedin: 'https://linkedin.com/in/carlosmendoza', github: 'https://github.com/carlosmendoza' },
+      { name: 'Diana Sologuren',      role: 'Directora de Proyectos',                        bio: 'Software architect specialized in real-time data platforms, IoT integrations and cloud-native infrastructure.', img: 'assets/team/diana-sologuren.jpeg', linkedin: 'https://linkedin.com/in/andreariospe', github: 'https://github.com/andreariospe' },
+      { name: 'Diego Pozo',    role: 'Director de Negocios',            bio: 'Product leader with background in operational intelligence and UX for industrial environments.', img: 'assets/team/diego-pozo.jpg', linkedin: 'https://linkedin.com/in/migueltorrespe', github: null },
+      { name: 'Arturo Noriega',     role: 'Director de Tecnología',        bio: 'Full-stack engineer leading platform development with expertise in distributed systems and automation.', img: 'assets/team/arturo-noriega.jpeg', linkedin: 'https://linkedin.com/in/luciavargaspe', github: 'https://github.com/luciavargaspe' },
+      { name: 'Ricardo Bravo',     role: 'Director de Seguridad de la Información',     bio: 'Operational consultant helping companies across Peru and LatAm maximize platform adoption and ROI.', img: 'assets/team/ricardo-bravo.jpeg', linkedin: 'https://linkedin.com/in/diegaflorespe', github: null },
+        ],
     },
     contact: {
       pageEyebrow: 'Contacto',
