@@ -223,12 +223,11 @@ const CONTENT = {
       teamEyebrow: 'Our Team',
       teamTitle: 'The People Behind AINGETK',
       team: [
-        { name: 'Enzo Rivas',   role: 'CEO & Co-founder',          bio: 'Industrial engineer with 12+ years in operational systems and enterprise software deployment across Latin America.', img: 'assets/team/enzo-rivas.jpg', linkedin: 'https://linkedin.com/in/carlosmendoza', github: 'https://github.com/carlosmendoza' },
-        { name: 'Diana Sologuren',      role: 'Directora de Proyectos',                        bio: 'Software architect specialized in real-time data platforms, IoT integrations and cloud-native infrastructure.', img: 'assets/team/diana-sologuren.jpeg', linkedin: 'https://linkedin.com/in/andreariospe', github: 'https://github.com/andreariospe' },
-        { name: 'Diego Pozo',    role: 'Director de Negocios',            bio: 'Product leader with background in operational intelligence and UX for industrial environments.', img: 'assets/team/diego-pozo.jpg', linkedin: 'https://linkedin.com/in/migueltorrespe', github: null },
-        { name: 'Arturo Noriega',     role: 'Director de Tecnología',        bio: 'Full-stack engineer leading platform development with expertise in distributed systems and automation.', img: 'assets/team/arturo-noriega.jpeg', linkedin: 'https://linkedin.com/in/luciavargaspe', github: 'https://github.com/luciavargaspe' },
-        { name: 'Ricardo Bravo',     role: 'Director de Seguridad de la Información',     bio: 'Operational consultant helping companies across Peru and LatAm maximize platform adoption and ROI.', img: 'assets/team/ricardo-bravo.jpeg', linkedin: 'https://linkedin.com/in/diegaflorespe', github: null },
-        
+        { name: 'Enzo Rivas',      role: 'CEO & Co-founder',             bio: 'Co-founder of AINGETK, focused on turning the company into the strategic partner that guides clients through technology adoption.', img: 'assets/team/enzo-rivas.jpg', linkedin: 'https://www.linkedin.com/in/enzo-nicolas-julio-rivas-rojas-602b20249/', github: 'https://github.com/Torer0' },
+        { name: 'Diana Sologuren', role: 'Head of Projects',             bio: 'Leads projects by first understanding the client’s business, so every proposed solution delivers real, measurable value.', img: 'assets/team/diana-sologuren.jpeg', linkedin: 'https://www.linkedin.com/in/dianasologuren/', github: null },
+        { name: 'Diego Pozo',      role: 'Co-founder',                   bio: 'Co-founder of AINGETK, committed to working closely with every client to deliver solutions that create real business impact.', img: 'assets/team/diego-pozo.jpg', linkedin: 'https://www.linkedin.com/in/diego-pozo-abregu/', github: 'https://github.com/Pozzzo' },
+        { name: 'Arturo Noriega',  role: 'Lead Developer',               bio: 'Builds robust, scalable solutions, convinced that technology must stay invisible to the user while being powerful for the business.', img: 'assets/team/arturo-noriega.jpeg', linkedin: 'https://www.linkedin.com/in/arturo-manuel-noriega-noriega-7163b3252/', github: 'https://github.com/ArturoManuel' },
+        { name: 'Ricardo Bravo',   role: 'Cybersecurity Specialist',     bio: 'Approaches business transformation beyond technology, treating people and processes as the true competitive differentiator.', img: 'assets/team/ricardo-bravo.jpeg', linkedin: 'https://www.linkedin.com/in/ricardo-bravo-wong-2a377221b/', github: 'https://github.com/Kotrixx' },
       ],
     },
     contact: {
@@ -446,12 +445,12 @@ const CONTENT = {
       teamEyebrow: 'Nuestro Equipo',
       teamTitle: 'Las Personas Detrás de AINGETK',
       team: [
-      { name: 'Enzo Rivas',   role: 'CEO & Co-founder',          bio: 'Industrial engineer with 12+ years in operational systems and enterprise software deployment across Latin America.', img: 'assets/team/enzo-rivas.jpg', linkedin: 'https://linkedin.com/in/carlosmendoza', github: 'https://github.com/carlosmendoza' },
-      { name: 'Diana Sologuren',      role: 'Directora de Proyectos',                        bio: 'Software architect specialized in real-time data platforms, IoT integrations and cloud-native infrastructure.', img: 'assets/team/diana-sologuren.jpeg', linkedin: 'https://linkedin.com/in/andreariospe', github: 'https://github.com/andreariospe' },
-      { name: 'Diego Pozo',    role: 'Director de Negocios',            bio: 'Product leader with background in operational intelligence and UX for industrial environments.', img: 'assets/team/diego-pozo.jpg', linkedin: 'https://linkedin.com/in/migueltorrespe', github: null },
-      { name: 'Arturo Noriega',     role: 'Director de Tecnología',        bio: 'Full-stack engineer leading platform development with expertise in distributed systems and automation.', img: 'assets/team/arturo-noriega.jpeg', linkedin: 'https://linkedin.com/in/luciavargaspe', github: 'https://github.com/luciavargaspe' },
-      { name: 'Ricardo Bravo',     role: 'Director de Seguridad de la Información',     bio: 'Operational consultant helping companies across Peru and LatAm maximize platform adoption and ROI.', img: 'assets/team/ricardo-bravo.jpeg', linkedin: 'https://linkedin.com/in/diegaflorespe', github: null },
-        ],
+      { name: 'Enzo Rivas',      role: 'CEO & Co-fundador',                        bio: 'Co-fundador de AINGETK, enfocado en convertir a la empresa en el socio estratégico que acompaña a sus clientes en la adopción de tecnología.', img: 'assets/team/enzo-rivas.jpg', linkedin: 'https://www.linkedin.com/in/enzo-nicolas-julio-rivas-rojas-602b20249/', github: 'https://github.com/Torer0' },
+      { name: 'Diana Sologuren', role: 'Directora de Proyectos',                   bio: 'Lidera proyectos entendiendo primero el negocio del cliente, para que cada solución propuesta genere valor real y medible.', img: 'assets/team/diana-sologuren.jpeg', linkedin: 'https://www.linkedin.com/in/dianasologuren/', github: null },
+      { name: 'Diego Pozo',      role: 'Co-fundador',                              bio: 'Co-fundador de AINGETK, comprometido en acompañar de cerca a cada cliente con soluciones que generen impacto real en su negocio.', img: 'assets/team/diego-pozo.jpg', linkedin: 'https://www.linkedin.com/in/diego-pozo-abregu/', github: 'https://github.com/Pozzzo' },
+      { name: 'Arturo Noriega',  role: 'Lead Developer',                           bio: 'Construye soluciones robustas y escalables, con la convicción de que la tecnología debe ser invisible para el usuario y poderosa para el negocio.', img: 'assets/team/arturo-noriega.jpeg', linkedin: 'https://www.linkedin.com/in/arturo-manuel-noriega-noriega-7163b3252/', github: 'https://github.com/ArturoManuel' },
+      { name: 'Ricardo Bravo',   role: 'Especialista en Ciberseguridad',           bio: 'Aborda la transformación del negocio más allá de la tecnología, entendiendo a las personas y los procesos como el verdadero diferencial.', img: 'assets/team/ricardo-bravo.jpeg', linkedin: 'https://www.linkedin.com/in/ricardo-bravo-wong-2a377221b/', github: 'https://github.com/Kotrixx' },
+      ],
     },
     contact: {
       pageEyebrow: 'Contacto',
