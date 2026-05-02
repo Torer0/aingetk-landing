@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 /* ─── Section media map ─────────────────────────────────────────────
    video: local MP4 path  → coloca el archivo en /public/assets/videos/
@@ -33,13 +33,75 @@ const IMG = {
 };
 
 /* ─── SectionVideo component ──────────────────────────────────────── */
+function usePrefersReducedMotion() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const sync = () => setReducedMotion(query.matches);
+    sync();
+    query.addEventListener?.('change', sync);
+    return () => query.removeEventListener?.('change', sync);
+  }, []);
+
+  return reducedMotion;
+}
+
 function SectionVideo({ media, children, className = '', variant = '', style = {} }) {
+  const wrapRef = useRef(null);
+  const videoRef = useRef(null);
+  const reducedMotion = usePrefersReducedMotion();
+  const [nearViewport, setNearViewport] = useState(false);
+  const canUseVideo = Boolean(media?.video) && !reducedMotion;
+
+  useEffect(() => {
+    const node = wrapRef.current;
+    if (!node || typeof IntersectionObserver === 'undefined') {
+      setNearViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setNearViewport(entry.isIntersecting),
+      { rootMargin: '280px 0px', threshold: 0.01 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !canUseVideo) return;
+
+    if (nearViewport) {
+      video.play().catch(() => {});
+      return;
+    }
+    video.pause();
+  }, [nearViewport, canUseVideo]);
+
   return (
-    <div className={`sv${variant ? ` sv--${variant}` : ''} ${className}`} style={style}>
+    <div ref={wrapRef} className={`sv${variant ? ` sv--${variant}` : ''} ${className}`} style={style}>
       <div className="sv__bg">
-        <video autoPlay muted loop playsInline poster={media?.poster}>
-          {media?.video && <source src={media.video} type="video/mp4" />}
-        </video>
+        {canUseVideo ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload={nearViewport ? 'metadata' : 'none'}
+            poster={media?.poster}
+            disablePictureInPicture
+            aria-hidden="true"
+          >
+            {nearViewport && media?.video ? <source src={media.video} type="video/mp4" /> : null}
+          </video>
+        ) : (
+          media?.poster ? <img src={media.poster} alt="" loading="lazy" decoding="async" /> : null
+        )}
       </div>
       <div className="sv__overlay" />
       <div className="sv__content">{children}</div>
@@ -515,14 +577,40 @@ function AppNavbar({ currentPath }) {
   useEffect(() => { setOpen(false); }, [currentPath]);
 
   useEffect(() => {
-    function onScroll() {
+    let raf = 0;
+    let lastScrolled = false;
+    let lastPct = -1;
+
+    function readScroll() {
       const y = window.scrollY;
-      setScrolled(y > 24);
+      const nextScrolled = y > 24;
       const docH = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollPct(docH > 0 ? Math.min(100, (y / docH) * 100) : 0);
+      const nextPct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+
+      if (nextScrolled !== lastScrolled) {
+        lastScrolled = nextScrolled;
+        setScrolled(nextScrolled);
+      }
+
+      if (Math.abs(nextPct - lastPct) >= 0.5) {
+        lastPct = nextPct;
+        setScrollPct(nextPct);
+      }
+
+      raf = 0;
     }
+
+    function onScroll() {
+      if (raf) return;
+      raf = window.requestAnimationFrame(readScroll);
+    }
+
+    readScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
   }, []);
 
   useEffect(() => {
@@ -627,7 +715,7 @@ function AppNavbar({ currentPath }) {
           </button>
         </div>
         <div className="mobile-menu-footer">
-          <a href="mailto:contacto@aingetk.com" className="mobile-email">contacto@aingetk.com</a>
+          <a href="mailto:aingetk@gmail.com" className="mobile-email">aingetk@gmail.com</a>
           <span className="muted" style={{ fontSize: '0.82rem' }}>{C.mobileLocation}</span>
         </div>
       </div>
@@ -661,7 +749,7 @@ function AppFooter() {
         </div>
         <div>
           <h4>{F.col3}</h4>
-          <a href="mailto:contacto@aingetk.com">contacto@aingetk.com</a>
+          <a href="mailto:aingetk@gmail.com">aingetk@gmail.com</a>
           <a href="/contact">{F.contactUs}</a>
           <span style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>{F.location}</span>
         </div>
@@ -1121,9 +1209,12 @@ function TeamCarousel({ team, eyebrow, title }) {
 
   /* Auto-advance every 4s */
   useEffect(() => {
-    const t = setInterval(next, 4000);
+    const t = setInterval(() => {
+      if (document.visibilityState !== 'visible') return;
+      setActive((a) => (a + 1) % total);
+    }, 4000);
     return () => clearInterval(t);
-  }, [active]);
+  }, [total]);
 
   /* Visible indexes: prev, active, next */
   const idx = (offset) => (active + offset + total) % total;
@@ -1149,7 +1240,7 @@ function TeamCarousel({ team, eyebrow, title }) {
                   onClick={() => pos !== 'hidden' && setActive(i)}
                 >
                   <div className="team-avatar-wrap">
-                    <img className="team-avatar" src={member.img} alt={member.name} loading="lazy" />
+                    <img className="team-avatar" src={member.img} alt={member.name} loading="lazy" decoding="async" width="96" height="96" />
                     <div className="team-avatar-ring" />
                   </div>
                   <div className="team-info">
@@ -1263,7 +1354,7 @@ function ContactPage() {
           <article className="panel">
             <h3>{CT.card1Title}</h3>
             <p>{CT.card1Body}</p>
-            <a className="inline-link" href="mailto:contacto@aingetk.com">contacto@aingetk.com</a>
+            <a className="inline-link" href="mailto:aingetk@gmail.com">aingetk@gmail.com</a>
           </article>
           <article className="panel">
             <h3>{CT.card2Title}</h3>
@@ -1309,7 +1400,7 @@ function resolvePage(pathname) {
 }
 
 /* ─── WhatsApp Floating Button ───────────────────────────────────── */
-const WA_NUMBER = '51999999999'; // ← reemplaza con tu número real (código país sin +)
+const WA_NUMBER = '51967865811'; // ← reemplaza con tu número real (código país sin +)
 const WA_MSG_ES = 'Hola, quiero saber más sobre las plataformas AINGETK.';
 const WA_MSG_EN = 'Hello, I would like to know more about AINGETK platforms.';
 
@@ -1369,3 +1460,4 @@ export default function App() {
     </LangCtx.Provider>
   );
 }
+

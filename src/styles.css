@@ -734,6 +734,8 @@ a {
 /* ─── Sections ───────────────────────────────────────────────────── */
 .section {
   padding: 72px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
 }
 
 .section h2,
@@ -789,6 +791,8 @@ a {
 /* ─── Panel / Card Base ──────────────────────────────────────────── */
 .panel {
   background: var(--panel);
+  will-change: transform;
+  transform: translateZ(0);
   border: 1px solid var(--panel-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -848,6 +852,7 @@ a {
 
 .team-card {
   position: absolute;
+  will-change: transform, opacity;
   width: 280px;
   border-radius: 22px;
   background: rgba(13, 20, 36, 0.72);
@@ -1621,6 +1626,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: 0;
+  transform: translateZ(0);
 }
 
 .sv__bg video,
@@ -1674,6 +1680,7 @@ a {
 
 .card-img {
   display: block;
+  will-change: transform;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -2082,3 +2089,30 @@ a {
     font-size: 0.68rem;
   }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .section-fade {
+    animation: none !important;
+  }
+
+  .panel:hover,
+  .panel.has-img:hover .card-img,
+  .team-card,
+  .team-card--left,
+  .team-card--right,
+  .wa-fab:hover {
+    transform: none !important;
+  }
+}
+
